@@ -25,101 +25,152 @@
 </head>
 <body>
 
-<!-- Ambient Subtle Video Background -->
-<div class="video-background-wrapper" aria-hidden="true">
-  <video class="video-background-player" id="bg-video-el" autoplay loop muted playsinline preload="auto">
-    <source src="/bg-video.mp4" type="video/mp4">
-  </video>
-  <div class="video-background-overlay"></div>
+<!-- Fixed Full-Page HD Cyber Background with Seamless Flow -->
+<div class="sigid-fixed-bg" aria-hidden="true">
+  <div class="sigid-bg-layer"></div>
+  <div class="sigid-bg-mesh"></div>
 </div>
 
-<!-- Floating 28px Pill Navigation (Tomorro Pressed Seed Nav) -->
-<div class="command-header-wrapper">
-  <header class="command-header">
-    <div class="brand-section">
-      <a href="/" class="brand-logo-badge">
-        <div class="tomorro-logo-mark">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#68ef3f" stroke-width="1.8" fill="rgba(104, 239, 63, 0.15)"/>
-            <path d="M12 7C9.5 7 7.5 9 7.5 12C7.5 14.5 9.5 17 12 17C14.5 17 16.5 14.5 16.5 12" stroke="#68ef3f" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="12" cy="12" r="2" fill="#68ef3f"/>
-          </svg>
-        </div>
-        <span class="brand-title">sig<span class="brand-accent">&bull;</span>id</span>
+<!-- ============================================================
+     SIG-ID HERO STAGE (Pixel-Perfect from Reference UI)
+     Uses hero-bg-hd.png as background with HUD telemetry & glass card
+     ============================================================ -->
+<section class="sigid-hero-stage" id="manifesto">
+  <div class="sigid-hero-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Top Floating Pill Navigation -->
+  <header class="sigid-nav-bar">
+    <div class="sigid-nav-left">
+      <a href="/" class="sigid-brand">
+        <svg class="sigid-brand-radar" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#48f038" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="6" stroke="#48f038" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="2.2" fill="#48f038"/>
+        </svg>
+        <span class="sigid-brand-name">sig<span class="sigid-dot">&bull;</span>id</span>
       </a>
 
-      <nav class="header-nav">
-        <a class="cmd-nav-link active" href="/">Manifesto</a>
-        <a class="cmd-nav-link" href="#capabilities">Capabilities</a>
-        <a class="cmd-nav-link" href="#architecture">Architecture</a>
-        <a class="cmd-nav-link" href="/dashboard.html">Console</a>
+      <nav class="sigid-nav-links">
+        <a href="#manifesto" class="sigid-link active">Manifesto</a>
+        <a href="#capabilities" class="sigid-link">Capabilities</a>
+        <a href="#architecture" class="sigid-link">Architecture</a>
+        <a href="/dashboard.html" class="sigid-link">Console</a>
       </nav>
     </div>
 
-    <div class="header-right">
-      <div class="master-clock" id="clock">00:00:00 UTC</div>
-      <a href="/dashboard.html" class="tomorro-btn-primary">
+    <div class="sigid-nav-right">
+      <div class="sigid-live-clock" id="sigid-clock">27 Sep 2026 13:05:47 UTC</div>
+      <a href="/dashboard.html" class="sigid-nav-btn">
         Launch Console &rarr;
       </a>
     </div>
   </header>
-</div>
+
+  <!-- Top-Right HUD Marker -->
+  <div class="sigid-hud-marker hud-top-right">
+    <div class="hud-text-stack">
+      <span>RF SIGNAL</span>
+      <span>ANALYSIS</span>
+    </div>
+    <div class="hud-bracket-box">
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner br"></div>
+    </div>
+    <div class="hud-mini-graph">
+      <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
+        <path d="M0 10H4L7 3L10 17L13 6L16 14L19 8L22 12L25 9L28 11H34" stroke="#48f038" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Bottom-Left HUD Marker -->
+  <div class="sigid-hud-marker hud-bottom-left">
+    <div class="hud-bracket-box">
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner bl"></div>
+    </div>
+    <div class="hud-text-stack">
+      <span>SPECTRUM</span>
+      <span>MONITORING</span>
+    </div>
+    <div class="hud-bars-eq">
+      <span class="eq-bar b1"></span>
+      <span class="eq-bar b2"></span>
+      <span class="eq-bar b3"></span>
+      <span class="eq-bar b4"></span>
+      <span class="eq-bar b5"></span>
+      <span class="eq-bar b6"></span>
+    </div>
+  </div>
+
+  <!-- Bottom-Right HUD Marker -->
+  <div class="sigid-hud-marker hud-bottom-right">
+    <div class="hud-bracket-box">
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner br"></div>
+    </div>
+    <div class="hud-text-stack">
+      <span>SIGNAL</span>
+      <span>DECODED</span>
+    </div>
+    <div class="hud-mini-graph">
+      <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
+        <path d="M0 10 Q 8 2, 16 10 T 32 10" stroke="#48f038" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Central Frosted Glass Hero Card -->
+  <div class="sigid-hero-card-container">
+    <div class="sigid-hero-card">
+      <!-- Announcement / Event Pill -->
+      <div class="sigid-card-pill">
+        <span class="pill-dim">Smart India Hackathon &bull; NTRO SIH26147 &bull;</span>
+        <span class="pill-green">Autonomous SIGINT Platform &rarr;</span>
+      </div>
+
+      <!-- Main Stacking Headline -->
+      <h1 class="sigid-card-headline">
+        <span class="hl-line">Your Spectrum Has</span>
+        <span class="hl-line">The Answer.</span>
+        <span class="hl-line"><span class="headline-dot">.</span>Just <span class="headline-green">Listen.</span></span>
+      </h1>
+
+      <!-- Subtitle Description -->
+      <p class="sigid-card-desc">
+        Automated blind Signal Intelligence (SIGINT) for unknown raw RF recordings (.iq / .wav): non-linear symbol-clock recovery, carrier tracking, candidate demodulation, de-interleaving, and forward error correction decoding &mdash; verified strictly by <span class="truth-highlight">mathematical ground truth.</span>
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="sigid-card-actions">
+        <a href="/dashboard.html" class="btn-console-neon">
+          Launch Cloud Console &rarr;
+        </a>
+        <a href="#capabilities" class="btn-explore-glass">
+          Explore Capabilities
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Trust Strip -->
+  <div class="sigid-hero-trust-strip">
+    <div class="trust-subtitle">
+      Engineered for defense intelligence &bull; National Technical Research Organisation
+    </div>
+    <div class="trust-org-row">
+      <span class="trust-item">NTRO SIH26147</span>
+      <span class="org-dot">&bull;</span>
+      <span class="trust-item">TEAM VERTEX</span>
+      <span class="org-dot">&bull;</span>
+      <span class="trust-item">MINISTRY OF HOME AFFAIRS</span>
+      <span class="org-dot">&bull;</span>
+      <span class="trust-item">SIH 2026</span>
+    </div>
+  </div>
+</section>
 
 <main class="tomorro-landing-container">
-
-  <!-- Atmospheric Botanical Glow Orb -->
-  <div class="tomorro-hero-orb"></div>
-
-  <!-- ============================================================
-       TOMORRO HERO SECTION
-       Ozik display type at ultra-tight 0.86 line-height
-       Electric Sprout green word punctuation
-       ============================================================ -->
-  <section class="tomorro-hero-section">
-    <!-- Event Announcement Pill -->
-    <div>
-      <div class="tomorro-event-pill">
-        <span>Smart India Hackathon &bull; NTRO SIH26147 &bull;</span>
-        <span class="event-accent">Autonomous SIGINT Platform</span>
-        <span class="event-arrow">&rarr;</span>
-      </div>
-    </div>
-
-    <!-- Ozik Stacking Headline with Green Word Punctuation -->
-    <h1 class="tomorro-display-headline">
-      Your spectrum has the answer. <br>
-      Just <span class="sprout-word">listen</span>.
-    </h1>
-
-    <p class="tomorro-hero-body">
-      Automated blind Signal Intelligence (SIGINT) for unknown raw RF recordings (<code>.iq</code> / <code>.wav</code>): non-linear symbol-clock recovery, carrier tracking, candidate demodulation, de-interleaving, and forward error correction decoding &mdash; verified strictly by <span class="green-word">mathematical ground truth</span>.
-    </p>
-
-    <!-- Dual CTAs: Filled Sprout Pill + Ghost CTA -->
-    <div class="tomorro-hero-actions">
-      <a href="/dashboard.html" class="tomorro-btn-primary" style="font-size: 15px; padding: 12px 28px;">
-        Launch Cloud Console &rarr;
-      </a>
-      <a href="#capabilities" class="tomorro-btn-outlined" style="font-size: 15px; padding: 12px 24px;">
-        Explore Capabilities
-      </a>
-    </div>
-
-    <!-- Social Proof Trust Strip Under Hero -->
-    <div class="tomorro-trust-strip">
-      <div class="tomorro-trust-caption">
-        Engineered for defense intelligence &bull; National Technical Research Organisation
-      </div>
-      <div class="tomorro-trust-logos">
-        <span class="tomorro-trust-logo">NTRO SIH26147</span>
-        <span class="tomorro-trust-logo">&bull;</span>
-        <span class="tomorro-trust-logo">Team Vertex</span>
-        <span class="tomorro-trust-logo">&bull;</span>
-        <span class="tomorro-trust-logo">Ministry of Home Affairs</span>
-        <span class="tomorro-trust-logo">&bull;</span>
-        <span class="tomorro-trust-logo">SIH 2026</span>
-      </div>
-    </div>
 
     <!-- ============================================================
          FLOATING PRODUCT MOCKUP CARD (Tilted 4-8deg with Depth)
@@ -237,10 +288,22 @@
 </footer>
 
 <script>
-// Live UTC Clock
+// Live UTC Clock formatted like: 27 Sep 2026 13:05:47 UTC
 function updateClock() {
-  const el = document.getElementById('clock');
-  if (el) el.textContent = new Date().toUTCString().replace(/.*?, /, '').replace(/ GMT/, ' UTC');
+  const now = new Date();
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const day = now.getUTCDate();
+  const month = months[now.getUTCMonth()];
+  const year = now.getUTCFullYear();
+  const hours = String(now.getUTCHours()).padStart(2, '0');
+  const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+  const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+  const formatted = `${day} ${month} ${year} ${hours}:${minutes}:${seconds} UTC`;
+
+  const el = document.getElementById('sigid-clock');
+  if (el) el.textContent = formatted;
+  const legacy = document.getElementById('clock');
+  if (legacy) legacy.textContent = formatted;
 }
 updateClock();
 setInterval(updateClock, 1000);

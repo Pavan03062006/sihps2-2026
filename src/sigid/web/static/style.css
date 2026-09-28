@@ -169,17 +169,17 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0c170d;
+  background-color: #030804;
 }
 
 body {
-  background-color: #0c170d;
+  background-color: #030804;
   background-image: 
-    radial-gradient(at 10% 12%, rgba(104, 239, 63, 0.12) 0px, transparent 48%),
-    radial-gradient(at 90% 18%, rgba(38, 162, 0, 0.14) 0px, transparent 52%),
-    radial-gradient(at 50% 50%, rgba(104, 239, 63, 0.07) 0px, transparent 55%),
-    radial-gradient(at 20% 80%, rgba(39, 63, 43, 0.25) 0px, transparent 60%),
-    radial-gradient(at 80% 90%, rgba(104, 239, 63, 0.08) 0px, transparent 50%);
+    radial-gradient(at 10% 12%, rgba(72, 240, 56, 0.08) 0px, transparent 48%),
+    radial-gradient(at 90% 18%, rgba(38, 162, 0, 0.1) 0px, transparent 52%),
+    radial-gradient(at 50% 50%, rgba(72, 240, 56, 0.05) 0px, transparent 55%),
+    radial-gradient(at 20% 80%, rgba(18, 35, 20, 0.3) 0px, transparent 60%),
+    radial-gradient(at 80% 90%, rgba(72, 240, 56, 0.06) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--color-pure-white);
   font-family: var(--font-aeonik);
@@ -513,9 +513,9 @@ body {
 .tomorro-landing-container {
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 60px 32px 0;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 /* Atmospheric Botanical Glow Orb (400-600px gradient) */
@@ -702,16 +702,19 @@ body {
 }
 
 /* ============================================================
-   ALTERNATING LIGHT & DARK SECTIONS
-   Pure White (#ffffff) band with Bone White (#f2f5eb) cards
+   MATHEMATICAL VERIFICATION SECTION (Full Landing Page Dark Theme)
+   Seamless dark obsidian & cybernetic emerald cards
    ============================================================ */
 .tomorro-light-band {
-  background: var(--color-pure-white);
-  color: var(--color-onyx-olive);
+  background: linear-gradient(180deg, #030804 0%, #061208 50%, #030804 100%);
+  color: var(--color-pure-white);
   padding: 96px 0;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   width: 100vw;
+  position: relative;
+  border-top: 1px solid rgba(72, 240, 56, 0.15);
+  border-bottom: 1px solid rgba(72, 240, 56, 0.15);
 }
 
 .tomorro-light-container {
@@ -722,23 +725,23 @@ body {
 
 .tomorro-light-headline {
   font-family: var(--font-ozik);
-  font-size: clamp(36px, 4.5vw, var(--text-display-xl));
+  font-size: clamp(34px, 4.5vw, var(--text-display-xl));
   font-weight: var(--font-weight-extrabold);
   line-height: var(--leading-display-xl);
-  color: var(--color-onyx-olive);
+  color: #ffffff;
   margin-bottom: 20px;
   text-transform: capitalize;
 }
 
 .tomorro-light-body {
-  font-size: 17px;
-  color: var(--color-slate);
+  font-size: 16px;
+  color: var(--color-pale-fern);
   max-width: 600px;
   line-height: 1.6;
   margin-bottom: 48px;
 }
 
-/* Bone White Cards on Light Band */
+/* Dark Glassmorphism Cards */
 .tomorro-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -746,40 +749,46 @@ body {
 }
 
 .tomorro-bone-card {
-  background: var(--color-bone-white);
-  border: 1px solid var(--color-mist-green);
+  background: rgba(14, 28, 18, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(72, 240, 56, 0.2);
   border-radius: var(--radius-cards);
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.2s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
 }
 
 .tomorro-bone-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: rgba(72, 240, 56, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(72, 240, 56, 0.15);
 }
 
 .tomorro-card-tag {
-  font-family: var(--font-instrument-serif);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--color-deep-verdant);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #48f038;
   margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .tomorro-card-title {
   font-family: var(--font-aeonik);
   font-size: 20px;
   font-weight: var(--font-weight-bold);
-  color: var(--color-onyx-olive);
+  color: #ffffff;
   margin-bottom: 12px;
   letter-spacing: -0.3px;
 }
 
 .tomorro-card-desc {
-  font-size: 15px;
-  color: var(--color-slate);
+  font-size: 14px;
+  color: var(--color-pale-fern);
   line-height: 1.6;
 }
 
@@ -1950,3 +1959,517 @@ body {
   .eq-faders-container { min-width: 100%; }
   .modal-form-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   SIG-ID FIXED FULL-PAGE HD BACKGROUND (Seamless Continuation)
+   ============================================================ */
+.sigid-fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sigid-bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #030804;
+  background-image: url('/hero-bg-hd.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.sigid-bg-mesh {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 50% 30%, rgba(3, 8, 4, 0.05) 0%, rgba(3, 8, 4, 0.4) 65%, #030804 100%),
+    linear-gradient(180deg, transparent 0%, rgba(3, 8, 4, 0.15) 50%, rgba(3, 8, 4, 0.6) 100%);
+}
+
+.sigid-hero-stage {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px 28px;
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 10;
+}
+
+.sigid-hero-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(72, 240, 56, 0.05) 0%, rgba(3, 8, 4, 0) 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating 48px Top Navigation Bar */
+.sigid-nav-bar {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  max-width: 1060px;
+  height: 48px;
+  background: rgba(14, 26, 17, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 0 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.sigid-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.sigid-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.sigid-brand-radar {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.sigid-brand-name {
+  font-family: var(--font-ozik), 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+}
+
+.sigid-brand-name .sigid-dot {
+  color: #48f038;
+}
+
+.sigid-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sigid-link {
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(215, 230, 220, 0.75);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+}
+
+.sigid-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sigid-link.active {
+  background: rgba(36, 75, 45, 0.7);
+  border: 1px solid rgba(72, 240, 56, 0.3);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.sigid-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sigid-live-clock {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: rgba(185, 205, 190, 0.75);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sigid-nav-btn {
+  background: linear-gradient(180deg, #5ef442 0%, #44e828 100%);
+  color: #051408;
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(72, 240, 56, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.75);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.sigid-nav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(72, 240, 56, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Central Frosted Glass Hero Card */
+.sigid-hero-card-container {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  padding: 16px 20px;
+}
+
+.sigid-hero-card {
+  max-width: 740px;
+  width: 100%;
+  padding: 34px 44px 38px;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(14, 30, 18, 0.44);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 40px;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.5),
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    0 0 45px rgba(72, 240, 56, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Event / Hackathon Announcement Pill */
+.sigid-card-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  background: rgba(8, 20, 11, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 11.5px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sigid-card-pill .pill-dim {
+  color: rgba(215, 230, 220, 0.85);
+  font-weight: 500;
+}
+
+.sigid-card-pill .pill-green {
+  color: #48f038;
+  font-weight: 600;
+}
+
+/* Stacking Ultra-Bold Headline */
+.sigid-card-headline {
+  font-family: var(--font-ozik), 'Syne', -apple-system, sans-serif;
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 22px;
+  text-transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sigid-card-headline .hl-line {
+  white-space: nowrap;
+  display: block;
+}
+
+.sigid-card-headline .headline-dot {
+  color: #48f038;
+  font-weight: 800;
+}
+
+.sigid-card-headline .headline-green {
+  color: #48f038;
+  text-shadow: 0 0 28px rgba(72, 240, 56, 0.7);
+}
+
+/* Card Body Copy */
+.sigid-card-desc {
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.62;
+  color: rgba(205, 222, 210, 0.88);
+  max-width: 610px;
+  margin: 0 auto 30px;
+  font-weight: 400;
+}
+
+.sigid-card-desc .truth-highlight {
+  color: #48f038;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(72, 240, 56, 0.45);
+}
+
+/* Dual CTAs */
+.sigid-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn-console-neon {
+  background: linear-gradient(180deg, #5ef442 0%, #44e828 100%);
+  color: #051408;
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 11px 26px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 24px rgba(72, 240, 56, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-console-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 34px rgba(72, 240, 56, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.btn-explore-glass {
+  background: rgba(12, 26, 16, 0.68);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 11px 24px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-explore-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* HUD Telemetry Elements */
+.sigid-hud-marker {
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.hud-top-right {
+  top: 95px;
+  right: 55px;
+}
+
+.hud-bottom-left {
+  bottom: 85px;
+  left: 55px;
+}
+
+.hud-bottom-right {
+  bottom: 85px;
+  right: 55px;
+}
+
+.hud-bracket-box {
+  width: 12px;
+  height: 38px;
+  position: relative;
+}
+
+.hud-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgba(72, 240, 56, 0.6);
+  border-style: solid;
+}
+
+.hud-corner.tl {
+  top: 0;
+  left: 0;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.hud-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.hud-corner.tr {
+  top: 0;
+  right: 0;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.hud-corner.br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.hud-text-stack {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(72, 240, 56, 0.7);
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+}
+
+.hud-mini-graph {
+  display: flex;
+  align-items: center;
+}
+
+.hud-mini-graph svg path {
+  filter: drop-shadow(0 0 4px rgba(72, 240, 56, 0.6));
+}
+
+/* Animated Equalizer Bars */
+.hud-bars-eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 22px;
+}
+
+.hud-bars-eq .eq-bar {
+  width: 3px;
+  background: #48f038;
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(72, 240, 56, 0.5);
+  animation: eqPulse 1.2s ease-in-out infinite alternate;
+}
+
+.hud-bars-eq .b1 { height: 7px; animation-delay: 0.1s; }
+.hud-bars-eq .b2 { height: 14px; animation-delay: 0.3s; }
+.hud-bars-eq .b3 { height: 20px; animation-delay: 0.5s; }
+.hud-bars-eq .b4 { height: 11px; animation-delay: 0.2s; }
+.hud-bars-eq .b5 { height: 17px; animation-delay: 0.4s; }
+.hud-bars-eq .b6 { height: 9px; animation-delay: 0.6s; }
+
+@keyframes eqPulse {
+  0% { transform: scaleY(0.4); opacity: 0.6; }
+  100% { transform: scaleY(1.0); opacity: 1; }
+}
+
+/* Footer / Trust Strip */
+.sigid-hero-trust-strip {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sigid-hero-trust-strip .trust-subtitle {
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 11.5px;
+  color: rgba(160, 185, 170, 0.7);
+  letter-spacing: 0.02em;
+}
+
+.sigid-hero-trust-strip .trust-org-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: var(--font-aeonik), 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(220, 235, 225, 0.8);
+  flex-wrap: wrap;
+}
+
+.sigid-hero-trust-strip .trust-org-row .org-dot {
+  color: #48f038;
+  font-weight: 800;
+}
+
+/* Mobile Responsiveness for Hero */
+@media (max-width: 900px) {
+  .sigid-hud-marker {
+    display: none;
+  }
+  .sigid-nav-bar {
+    padding: 0 10px;
+  }
+  .sigid-live-clock {
+    display: none;
+  }
+  .sigid-hero-card {
+    padding: 24px 20px;
+  }
+  .sigid-card-headline {
+    font-size: 32px;
+  }
+  .sigid-hero-trust-strip .trust-org-row {
+    gap: 12px;
+    font-size: 10px;
+  }
+}
+
