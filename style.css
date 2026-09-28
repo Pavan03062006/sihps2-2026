@@ -219,15 +219,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(14, 28, 18, 0.75) 35%, rgba(6, 16, 10, 0.9) 100%);
+  background: rgba(14, 26, 16, 0.68);
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border-bottom: 1px solid rgba(72, 240, 56, 0.28);
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.5),
-    0 8px 32px rgba(0, 0, 0, 0.45),
-    0 0 24px rgba(72, 240, 56, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .command-header {
@@ -349,17 +346,13 @@ body {
 .header-action-btn.primary,
 .execute-search-btn,
 .tomorro-btn-primary {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #64f848 0%, #3ee022 100%);
-  color: #041206;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-top: 1.5px solid #ffffff;
-  border-bottom: 1.5px solid rgba(15, 70, 20, 0.7);
+  background: linear-gradient(180deg, #7cf854 0%, #5ce233 100%);
+  color: #0c1a0d;
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: var(--radius-pill);
   padding: 10px 24px;
   font-family: var(--font-aeonik);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.2px;
   display: inline-flex;
@@ -368,36 +361,16 @@ body {
   gap: 8px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.85),
-    inset 0 -2px 3px rgba(0, 60, 15, 0.4),
-    0 0 24px rgba(72, 240, 56, 0.5),
-    0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 18px rgba(104, 239, 63, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.7);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.header-action-btn.primary::before,
-.execute-search-btn::before,
-.tomorro-btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 2px;
-  background: radial-gradient(ellipse at center, #ffffff 0%, rgba(255, 255, 255, 0.95) 45%, transparent 80%);
-  filter: drop-shadow(0 0 4px #ffffff);
-  pointer-events: none;
 }
 
 .header-action-btn.primary:hover,
 .execute-search-btn:hover:not(:disabled),
 .tomorro-btn-primary:hover {
-  transform: translateY(-1.5px);
-  box-shadow:
-    inset 0 2px 2px rgba(255, 255, 255, 1),
-    0 0 32px rgba(72, 240, 56, 0.7),
-    0 8px 24px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(180deg, #8eff69 0%, #68ef3f 100%);
+  box-shadow: 0 6px 26px rgba(104, 239, 63, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
 }
 
 .header-action-btn.primary:active,
@@ -415,58 +388,34 @@ body {
   transform: none;
 }
 
-/* Outlined Pill Button (Sign In / Secondary / Export) */
+/* Outlined Pill Button (Sign In / Secondary) */
 .header-action-btn,
 .tomorro-btn-outlined {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(18, 38, 24, 0.48) 45%, rgba(10, 24, 15, 0.75) 100%);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--color-pure-white);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(72, 240, 56, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-pill);
-  padding: 8px 20px;
+  padding: 8px 18px;
   font-family: var(--font-aeonik);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   display: inline-flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
   text-decoration: none;
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
-  box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.75),
-    inset 0 -1.5px 2px rgba(72, 240, 56, 0.35),
-    0 0 20px rgba(72, 240, 56, 0.2),
-    0 6px 24px rgba(0, 0, 0, 0.35);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.header-action-btn::before,
-.tomorro-btn-outlined::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 18%;
-  right: 18%;
-  height: 2px;
-  background: radial-gradient(ellipse at center, #ffffff 0%, rgba(160, 255, 180, 0.9) 35%, transparent 75%);
-  filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 8px #48f038);
-  pointer-events: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.18s ease;
 }
 
 .header-action-btn:hover,
 .tomorro-btn-outlined:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.24) 0%, rgba(24, 48, 30, 0.55) 45%, rgba(14, 30, 20, 0.8) 100%);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1.5px);
-  box-shadow:
-    inset 0 2px 2px rgba(255, 255, 255, 0.9),
-    0 0 28px rgba(72, 240, 56, 0.45),
-    0 8px 28px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .gcp-icon-btn {
@@ -1108,35 +1057,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-select,
-.tactical-select {
-  color-scheme: dark;
-  background-color: #07150a;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2348f038' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  color: var(--color-pure-white);
-  border: 1px solid rgba(72, 240, 56, 0.35);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.65);
-  border-radius: var(--radius-full);
-  padding: 8px 38px 8px 16px;
-  font-family: var(--font-aeonik);
-  font-size: 13px;
-  font-weight: 500;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.4),
-    0 0 16px rgba(72, 240, 56, 0.2),
-    0 4px 14px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s ease;
-}
-
+.tactical-select,
 .tactical-input {
   background: rgba(0, 0, 0, 0.32);
   color: var(--color-pure-white);
@@ -1152,46 +1073,10 @@ select,
   transition: all 0.15s ease;
 }
 
-select:hover,
-.tactical-select:hover {
-  border-color: rgba(72, 240, 56, 0.7);
-  box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
-    0 0 24px rgba(72, 240, 56, 0.35);
-}
-
-select:focus,
 .tactical-select:focus,
 .tactical-input:focus {
   border-color: var(--color-electric-sprout);
-  box-shadow:
-    0 0 0 3px rgba(72, 240, 56, 0.25),
-    inset 0 1px 2px rgba(255, 255, 255, 0.6),
-    0 0 24px rgba(72, 240, 56, 0.4);
-}
-
-/* Style native <option> elements to eliminate default gray/blue styles */
-select option,
-.tactical-select option {
-  color-scheme: dark;
-  background-color: #07150a !important;
-  color: #d8eedb !important;
-  padding: 10px 16px !important;
-  font-family: var(--font-aeonik), 'Inter', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  border: none !important;
-}
-
-select option:hover,
-select option:focus,
-select option:checked,
-.tactical-select option:hover,
-.tactical-select option:focus,
-.tactical-select option:checked {
-  background-color: #153c1d !important;
-  color: #48f038 !important;
-  font-weight: 600 !important;
+  box-shadow: 0 0 0 3px rgba(104, 239, 63, 0.25), inset 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .tactical-radio-group {
@@ -2162,37 +2047,6 @@ select option:checked,
   object-fit: cover;
   filter: brightness(1.25) contrast(1.1) saturate(1.2);
   display: block;
-}
-
-/* Dashboard Static Cyber Background (Consistent Landing Page Visuals, Zero Motion) */
-.dashboard-static-bg {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  background-color: #030804;
-}
-
-.dashboard-bg-static-layer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/hero-bg-hd.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: brightness(0.92) contrast(1.08) saturate(1.1);
-}
-
-.dashboard-bg-static-dim {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 30%, rgba(3, 8, 4, 0.58) 0%, rgba(3, 8, 4, 0.88) 100%);
-  pointer-events: none;
 }
 
 .sigid-hero-stage {

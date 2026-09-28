@@ -1,176 +1,186 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIG-ID &mdash; Autonomous Signal Intelligence Platform</title>
-<link rel="stylesheet" href="/style.css">
-<style>
-  /* Local canvas and interactive stage for Tomorro mockup */
-  .tomorro-scope-viewport {
-    width: 100%;
-    height: 360px;
-    background: #0e1c10;
-    border-radius: 14px;
-    position: relative;
-    border: 1px solid rgba(104, 239, 63, 0.2);
-    overflow: hidden;
-  }
-  .tomorro-scope-viewport canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIG-ID &mdash; Autonomous Signal Intelligence Platform</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Local canvas and interactive stage for Tomorro mockup */
+    .tomorro-scope-viewport {
+      width: 100%;
+      height: 360px;
+      background: #0e1c10;
+      border-radius: 14px;
+      position: relative;
+      border: 1px solid rgba(104, 239, 63, 0.2);
+      overflow: hidden;
+    }
+
+    .tomorro-scope-viewport canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Fixed Full-Page HD Cyber Background with Seamless Flow -->
-<div class="sigid-fixed-bg" aria-hidden="true">
-  <div class="sigid-bg-layer"></div>
-  <div class="sigid-bg-mesh"></div>
-</div>
+  <!-- Fixed Full-Page Seamless Animated Looping Video Background -->
+  <div class="sigid-fixed-bg" aria-hidden="true">
+    <video id="bg-video-el" class="sigid-bg-video" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto">
+      <source src="gemini_generated_video_7b15eeaa%20(online-video-cutter.com).mp4" type="video/mp4">
+      <source src="/gemini_generated_video_7b15eeaa%20(online-video-cutter.com).mp4" type="video/mp4">
+      <source src="bg-video.mp4" type="video/mp4">
+      <source src="/bg-video.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<!-- ============================================================
+  <!-- ============================================================
      SIG-ID HERO STAGE (Pixel-Perfect from Reference UI)
-     Uses hero-bg-hd.png as background with HUD telemetry & glass card
+     Uses seamless looping background video with HUD telemetry & glass card
      ============================================================ -->
-<section class="sigid-hero-stage" id="manifesto">
-  <div class="sigid-hero-ambient-glow" aria-hidden="true"></div>
+  <section class="sigid-hero-stage" id="manifesto">
 
-  <!-- Top Floating Pill Navigation -->
-  <header class="sigid-nav-bar">
-    <div class="sigid-nav-left">
-      <a href="/" class="sigid-brand">
-        <svg class="sigid-brand-radar" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="#48f038" stroke-width="1.8"/>
-          <circle cx="12" cy="12" r="6" stroke="#48f038" stroke-width="1.6"/>
-          <circle cx="12" cy="12" r="2.2" fill="#48f038"/>
+    <!-- Top Floating Pill Navigation -->
+    <header class="sigid-nav-bar">
+      <div class="sigid-nav-left">
+        <a href="/" class="sigid-brand">
+          <svg class="sigid-brand-radar" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#48f038" stroke-width="1.8" />
+            <circle cx="12" cy="12" r="6" stroke="#48f038" stroke-width="1.6" />
+            <circle cx="12" cy="12" r="2.2" fill="#48f038" />
+          </svg>
+          <span class="sigid-brand-name">sig<span class="sigid-dot">&bull;</span>id</span>
+        </a>
+
+        <nav class="sigid-nav-links">
+          <a href="#manifesto" class="sigid-link active">Manifesto</a>
+          <a href="#capabilities" class="sigid-link">Capabilities</a>
+          <a href="#architecture" class="sigid-link">Architecture</a>
+          <a href="/dashboard.html" class="sigid-link">Console</a>
+        </nav>
+      </div>
+
+      <div class="sigid-nav-right">
+        <div class="sigid-live-clock" id="sigid-clock">27 Sep 2026 13:05:47 UTC</div>
+        <a href="/dashboard.html" class="sigid-nav-btn">
+          Launch Console &rarr;
+        </a>
+      </div>
+    </header>
+
+    <!-- Top-Right HUD Marker -->
+    <div class="sigid-hud-marker hud-top-right">
+      <div class="hud-text-stack">
+        <span>RF SIGNAL</span>
+        <span>ANALYSIS</span>
+      </div>
+      <div class="hud-bracket-box">
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner br"></div>
+      </div>
+      <div class="hud-mini-graph">
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
+          <path d="M0 10H4L7 3L10 17L13 6L16 14L19 8L22 12L25 9L28 11H34" stroke="#48f038" stroke-width="1.4"
+            stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <span class="sigid-brand-name">sig<span class="sigid-dot">&bull;</span>id</span>
-      </a>
-
-      <nav class="sigid-nav-links">
-        <a href="#manifesto" class="sigid-link active">Manifesto</a>
-        <a href="#capabilities" class="sigid-link">Capabilities</a>
-        <a href="#architecture" class="sigid-link">Architecture</a>
-        <a href="/dashboard.html" class="sigid-link">Console</a>
-      </nav>
-    </div>
-
-    <div class="sigid-nav-right">
-      <div class="sigid-live-clock" id="sigid-clock">27 Sep 2026 13:05:47 UTC</div>
-      <a href="/dashboard.html" class="sigid-nav-btn">
-        Launch Console &rarr;
-      </a>
-    </div>
-  </header>
-
-  <!-- Top-Right HUD Marker -->
-  <div class="sigid-hud-marker hud-top-right">
-    <div class="hud-text-stack">
-      <span>RF SIGNAL</span>
-      <span>ANALYSIS</span>
-    </div>
-    <div class="hud-bracket-box">
-      <div class="hud-corner tr"></div>
-      <div class="hud-corner br"></div>
-    </div>
-    <div class="hud-mini-graph">
-      <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
-        <path d="M0 10H4L7 3L10 17L13 6L16 14L19 8L22 12L25 9L28 11H34" stroke="#48f038" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Bottom-Left HUD Marker -->
-  <div class="sigid-hud-marker hud-bottom-left">
-    <div class="hud-bracket-box">
-      <div class="hud-corner tl"></div>
-      <div class="hud-corner bl"></div>
-    </div>
-    <div class="hud-text-stack">
-      <span>SPECTRUM</span>
-      <span>MONITORING</span>
-    </div>
-    <div class="hud-bars-eq">
-      <span class="eq-bar b1"></span>
-      <span class="eq-bar b2"></span>
-      <span class="eq-bar b3"></span>
-      <span class="eq-bar b4"></span>
-      <span class="eq-bar b5"></span>
-      <span class="eq-bar b6"></span>
-    </div>
-  </div>
-
-  <!-- Bottom-Right HUD Marker -->
-  <div class="sigid-hud-marker hud-bottom-right">
-    <div class="hud-bracket-box">
-      <div class="hud-corner tr"></div>
-      <div class="hud-corner br"></div>
-    </div>
-    <div class="hud-text-stack">
-      <span>SIGNAL</span>
-      <span>DECODED</span>
-    </div>
-    <div class="hud-mini-graph">
-      <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
-        <path d="M0 10 Q 8 2, 16 10 T 32 10" stroke="#48f038" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Central Frosted Glass Hero Card -->
-  <div class="sigid-hero-card-container">
-    <div class="sigid-hero-card">
-      <!-- Announcement / Event Pill -->
-      <div class="sigid-card-pill">
-        <span class="pill-dim">Smart India Hackathon &bull; NTRO SIH26147 &bull;</span>
-        <span class="pill-green">Autonomous SIGINT Platform &rarr;</span>
-      </div>
-
-      <!-- Main Stacking Headline -->
-      <h1 class="sigid-card-headline">
-        <span class="hl-line">Your Spectrum Has</span>
-        <span class="hl-line">The Answer.</span>
-        <span class="hl-line"><span class="headline-dot">.</span>Just <span class="headline-green">Listen.</span></span>
-      </h1>
-
-      <!-- Subtitle Description -->
-      <p class="sigid-card-desc">
-        Automated blind Signal Intelligence (SIGINT) for unknown raw RF recordings (.iq / .wav): non-linear symbol-clock recovery, carrier tracking, candidate demodulation, de-interleaving, and forward error correction decoding &mdash; verified strictly by <span class="truth-highlight">mathematical ground truth.</span>
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="sigid-card-actions">
-        <a href="/dashboard.html" class="btn-console-neon">
-          Launch Cloud Console &rarr;
-        </a>
-        <a href="#capabilities" class="btn-explore-glass">
-          Explore Capabilities
-        </a>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom Trust Strip -->
-  <div class="sigid-hero-trust-strip">
-    <div class="trust-subtitle">
-      Engineered for defense intelligence &bull; National Technical Research Organisation
+    <!-- Bottom-Left HUD Marker -->
+    <div class="sigid-hud-marker hud-bottom-left">
+      <div class="hud-bracket-box">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner bl"></div>
+      </div>
+      <div class="hud-text-stack">
+        <span>SPECTRUM</span>
+        <span>MONITORING</span>
+      </div>
+      <div class="hud-bars-eq">
+        <span class="eq-bar b1"></span>
+        <span class="eq-bar b2"></span>
+        <span class="eq-bar b3"></span>
+        <span class="eq-bar b4"></span>
+        <span class="eq-bar b5"></span>
+        <span class="eq-bar b6"></span>
+      </div>
     </div>
-    <div class="trust-org-row">
-      <span class="trust-item">NTRO SIH26147</span>
-      <span class="org-dot">&bull;</span>
-      <span class="trust-item">TEAM VERTEX</span>
-      <span class="org-dot">&bull;</span>
-      <span class="trust-item">MINISTRY OF HOME AFFAIRS</span>
-      <span class="org-dot">&bull;</span>
-      <span class="trust-item">SIH 2026</span>
-    </div>
-  </div>
-</section>
 
-<main class="tomorro-landing-container">
+    <!-- Bottom-Right HUD Marker -->
+    <div class="sigid-hud-marker hud-bottom-right">
+      <div class="hud-bracket-box">
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner br"></div>
+      </div>
+      <div class="hud-text-stack">
+        <span>SIGNAL</span>
+        <span>DECODED</span>
+      </div>
+      <div class="hud-mini-graph">
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
+          <path d="M0 10 Q 8 2, 16 10 T 32 10" stroke="#48f038" stroke-width="1.4" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Central Frosted Glass Hero Card -->
+    <div class="sigid-hero-card-container">
+      <div class="sigid-hero-card">
+        <!-- Announcement / Event Pill -->
+        <div class="sigid-card-pill">
+          <span class="pill-dim">Smart India Hackathon &bull; NTRO SIH26147 &bull;</span>
+          <span class="pill-green">Autonomous SIGINT Platform &rarr;</span>
+        </div>
+
+        <!-- Main Stacking Headline -->
+        <h1 class="sigid-card-headline">
+          <span class="hl-line">Your Spectrum Has</span>
+          <span class="hl-line">The Answer.</span>
+          <span class="hl-line"><span class="headline-dot">.</span>Just <span
+              class="headline-green">Listen.</span></span>
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="sigid-card-desc">
+          Automated blind Signal Intelligence (SIGINT) for unknown raw RF recordings (.iq / .wav): non-linear
+          symbol-clock recovery, carrier tracking, candidate demodulation, de-interleaving, and forward error correction
+          decoding &mdash; verified strictly by <span class="truth-highlight">mathematical ground truth.</span>
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="sigid-card-actions">
+          <a href="/dashboard.html" class="btn-console-neon">
+            Launch Cloud Console &rarr;
+          </a>
+          <a href="#capabilities" class="btn-explore-glass">
+            Explore Capabilities
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Trust Strip -->
+    <div class="sigid-hero-trust-strip">
+      <div class="trust-subtitle">
+        Engineered for defense intelligence &bull; National Technical Research Organisation
+      </div>
+      <div class="trust-org-row">
+        <span class="trust-item">NTRO SIH26147</span>
+        <span class="org-dot">&bull;</span>
+        <span class="trust-item">TEAM VERTEX</span>
+        <span class="org-dot">&bull;</span>
+        <span class="trust-item">MINISTRY OF HOME AFFAIRS</span>
+        <span class="org-dot">&bull;</span>
+        <span class="trust-item">SIH 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="tomorro-landing-container">
 
     <!-- ============================================================
          FLOATING PRODUCT MOCKUP CARD (Tilted 4-8deg with Depth)
@@ -179,8 +189,10 @@
       <div class="tomorro-mockup-card">
         <div class="tomorro-mockup-header">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--color-electric-sprout); box-shadow: 0 0 8px var(--color-electric-sprout);"></span>
-            <span style="font-family: var(--font-aeonik); font-size: 13px; font-weight: 600; color: var(--color-pure-white);">
+            <span
+              style="width: 10px; height: 10px; border-radius: 50%; background: var(--color-electric-sprout); box-shadow: 0 0 8px var(--color-electric-sprout);"></span>
+            <span
+              style="font-family: var(--font-aeonik); font-size: 13px; font-weight: 600; color: var(--color-pure-white);">
               CARRIER RECOVERY // 16-QAM POLAR CLUSTERING
             </span>
           </div>
@@ -196,213 +208,230 @@
           </div>
 
           <!-- Quick Metrics Bar -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(183, 189, 165, 0.15);">
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(183, 189, 165, 0.15);">
             <div>
               <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Modulation</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--color-electric-sprout); margin-top: 4px;">16-QAM</div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--color-electric-sprout); margin-top: 4px;">
+                16-QAM</div>
             </div>
             <div>
-              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Symbol Rate</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--color-pure-white); margin-top: 4px;">50.0 kSym/s</div>
+              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Symbol Rate
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--color-pure-white); margin-top: 4px;">50.0
+                kSym/s</div>
             </div>
             <div>
-              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Estimated SNR</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--color-electric-sprout); margin-top: 4px;">21.6 dB</div>
+              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Estimated SNR
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--color-electric-sprout); margin-top: 4px;">21.6
+                dB</div>
             </div>
             <div>
-              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Codec Engine</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--color-pure-white); margin-top: 4px;">Viterbi (K=7)</div>
+              <div style="font-size: 11px; color: var(--color-lichen-sage); text-transform: uppercase;">Codec Engine
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--color-pure-white); margin-top: 4px;">Viterbi
+                (K=7)</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </section>
+    </section>
 
-  <!-- ============================================================
+    <!-- ============================================================
        ALTERNATING LIGHT SECTION (Greenhouse Bench: Pure White & Bone)
        ============================================================ -->
-  <section class="tomorro-light-band" id="architecture">
-    <div class="tomorro-light-container">
-      <div style="text-align: center; max-width: 680px; margin: 0 auto 56px;">
-        <div style="font-family: var(--font-aeonik); font-size: 12px; font-weight: 700; color: var(--color-deep-verdant); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
-          02 // MATHEMATICAL VERIFICATION
+    <section class="tomorro-light-band" id="architecture">
+      <div class="tomorro-light-container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 56px;">
+          <div
+            style="font-family: var(--font-aeonik); font-size: 12px; font-weight: 700; color: var(--color-deep-verdant); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+            02 // MATHEMATICAL VERIFICATION
+          </div>
+          <h2 class="tomorro-light-headline">
+            Engineered for absolute ground truth.
+          </h2>
+          <p class="tomorro-light-body" style="margin: 0 auto;">
+            Signal intelligence cannot gamble on probabilistic hallucinations. Every candidate demodulation hypothesis
+            must pass strict, non-negotiable mathematical checksums.
+          </p>
         </div>
-        <h2 class="tomorro-light-headline">
-          Engineered for absolute ground truth.
-        </h2>
-        <p class="tomorro-light-body" style="margin: 0 auto;">
-          Signal intelligence cannot gamble on probabilistic hallucinations. Every candidate demodulation hypothesis must pass strict, non-negotiable mathematical checksums.
-        </p>
+
+        <!-- Bone White Cards on Light Band -->
+        <div class="tomorro-card-grid">
+          <!-- Card 1 -->
+          <div class="tomorro-bone-card">
+            <div class="tomorro-card-tag">Oerder &amp; Meyr</div>
+            <h3 class="tomorro-card-title">Blind Clock &amp; Carrier Recovery</h3>
+            <p class="tomorro-card-desc">
+              Non-linear clock extraction estimates baud rates without metadata. Mueller &amp; Müller synchronizers and
+              Costas carrier loops lock onto unknown carriers in milliseconds.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="tomorro-bone-card">
+            <div class="tomorro-card-tag">CRC-16 &amp; Barker</div>
+            <h3 class="tomorro-card-title">Zero False Positive Verification</h3>
+            <p class="tomorro-card-desc">
+              Autonomous frame synchronization with Barker code cross-correlation peaks, CRC-16 polynomial residue
+              validation, and re-encoded bit-error-rate thresholds.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="tomorro-bone-card">
+            <div class="tomorro-card-tag">96-Hypothesis Matrix</div>
+            <h3 class="tomorro-card-title">Multi-Codec &amp; Interleaver Decoding</h3>
+            <p class="tomorro-card-desc">
+              Viterbi soft-decision (K=7), Reed-Solomon (255,223), Concatenated, and LDPC BP decoding paired with Block,
+              Convolutional, Diagonal, and Pseudo-Random de-interleavers.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Bone White Cards on Light Band -->
-      <div class="tomorro-card-grid">
-        <!-- Card 1 -->
-        <div class="tomorro-bone-card">
-          <div class="tomorro-card-tag">Oerder &amp; Meyr</div>
-          <h3 class="tomorro-card-title">Blind Clock &amp; Carrier Recovery</h3>
-          <p class="tomorro-card-desc">
-            Non-linear clock extraction estimates baud rates without metadata. Mueller &amp; Müller synchronizers and Costas carrier loops lock onto unknown carriers in milliseconds.
-          </p>
-        </div>
+  </main>
 
-        <!-- Card 2 -->
-        <div class="tomorro-bone-card">
-          <div class="tomorro-card-tag">CRC-16 &amp; Barker</div>
-          <h3 class="tomorro-card-title">Zero False Positive Verification</h3>
-          <p class="tomorro-card-desc">
-            Autonomous frame synchronization with Barker code cross-correlation peaks, CRC-16 polynomial residue validation, and re-encoded bit-error-rate thresholds.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="tomorro-bone-card">
-          <div class="tomorro-card-tag">96-Hypothesis Matrix</div>
-          <h3 class="tomorro-card-title">Multi-Codec &amp; Interleaver Decoding</h3>
-          <p class="tomorro-card-desc">
-            Viterbi soft-decision (K=7), Reed-Solomon (255,223), Concatenated, and LDPC BP decoding paired with Block, Convolutional, Diagonal, and Pseudo-Random de-interleavers.
-          </p>
-        </div>
+  <!-- Tomorro Minimalist Footer -->
+  <footer
+    style="border-top: 1px solid var(--border-card); padding: 48px 32px; background: var(--color-forest-depths); color: var(--color-pale-fern); font-size: 13px;">
+    <div
+      style="max-width: var(--page-max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-weight: 700; color: var(--color-pure-white);">&copy; 2026 SIG-ID</span>
+        <span>&mdash;</span>
+        <span>National Technical Research Organisation (NTRO SIH26147)</span>
+      </div>
+      <div style="display: flex; gap: 24px;">
+        <a href="/" style="color: var(--color-pure-white); text-decoration: none;">Manifesto</a>
+        <a href="/dashboard.html" style="color: var(--color-pure-white); text-decoration: none;">Console</a>
+        <a href="/api/export/dossier" target="_blank"
+          style="color: var(--color-electric-sprout); text-decoration: none;">Mission Dossier</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-</main>
+  <script>
+    // Live UTC Clock formatted like: 27 Sep 2026 13:05:47 UTC
+    function updateClock() {
+      const now = new Date();
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const day = now.getUTCDate();
+      const month = months[now.getUTCMonth()];
+      const year = now.getUTCFullYear();
+      const hours = String(now.getUTCHours()).padStart(2, '0');
+      const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+      const formatted = `${day} ${month} ${year} ${hours}:${minutes}:${seconds} UTC`;
 
-<!-- Tomorro Minimalist Footer -->
-<footer style="border-top: 1px solid var(--border-card); padding: 48px 32px; background: var(--color-forest-depths); color: var(--color-pale-fern); font-size: 13px;">
-  <div style="max-width: var(--page-max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <span style="font-weight: 700; color: var(--color-pure-white);">&copy; 2026 SIG-ID</span>
-      <span>&mdash;</span>
-      <span>National Technical Research Organisation (NTRO SIH26147)</span>
-    </div>
-    <div style="display: flex; gap: 24px;">
-      <a href="/" style="color: var(--color-pure-white); text-decoration: none;">Manifesto</a>
-      <a href="/dashboard.html" style="color: var(--color-pure-white); text-decoration: none;">Console</a>
-      <a href="/api/export/dossier" target="_blank" style="color: var(--color-electric-sprout); text-decoration: none;">Mission Dossier</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-// Live UTC Clock formatted like: 27 Sep 2026 13:05:47 UTC
-function updateClock() {
-  const now = new Date();
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const day = now.getUTCDate();
-  const month = months[now.getUTCMonth()];
-  const year = now.getUTCFullYear();
-  const hours = String(now.getUTCHours()).padStart(2, '0');
-  const minutes = String(now.getUTCMinutes()).padStart(2, '0');
-  const seconds = String(now.getUTCSeconds()).padStart(2, '0');
-  const formatted = `${day} ${month} ${year} ${hours}:${minutes}:${seconds} UTC`;
-
-  const el = document.getElementById('sigid-clock');
-  if (el) el.textContent = formatted;
-  const legacy = document.getElementById('clock');
-  if (legacy) legacy.textContent = formatted;
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-// Interactive 16-QAM Polar Demodulation Scope on Forest Depths
-(function initTomorroScope() {
-  const canvas = document.getElementById('tomorro-scope-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let width, height;
-
-  function resize() {
-    width = canvas.width = canvas.parentElement.clientWidth;
-    height = canvas.height = canvas.parentElement.clientHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  // 16-QAM constellation centroids
-  const symbols = [];
-  const levels = [-3, -1, 1, 3];
-  for (let i of levels) {
-    for (let q of levels) {
-      symbols.push({ i: i / 3.4, q: q / 3.4 });
+      const el = document.getElementById('sigid-clock');
+      if (el) el.textContent = formatted;
+      const legacy = document.getElementById('clock');
+      if (legacy) legacy.textContent = formatted;
     }
-  }
+    updateClock();
+    setInterval(updateClock, 1000);
 
-  const cloud = [];
-  for (let s of symbols) {
-    for (let k = 0; k < 28; k++) {
-      cloud.push({
-        baseI: s.i,
-        baseQ: s.q,
-        noiseI: (Math.random() - 0.5) * 0.11,
-        noiseQ: (Math.random() - 0.5) * 0.11,
-        alpha: Math.random() * 0.7 + 0.3
+    // Interactive 16-QAM Polar Demodulation Scope on Forest Depths
+    (function initTomorroScope() {
+      const canvas = document.getElementById('tomorro-scope-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+
+      function resize() {
+        width = canvas.width = canvas.parentElement.clientWidth;
+        height = canvas.height = canvas.parentElement.clientHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // 16-QAM constellation centroids
+      const symbols = [];
+      const levels = [-3, -1, 1, 3];
+      for (let i of levels) {
+        for (let q of levels) {
+          symbols.push({ i: i / 3.4, q: q / 3.4 });
+        }
+      }
+
+      const cloud = [];
+      for (let s of symbols) {
+        for (let k = 0; k < 28; k++) {
+          cloud.push({
+            baseI: s.i,
+            baseQ: s.q,
+            noiseI: (Math.random() - 0.5) * 0.11,
+            noiseQ: (Math.random() - 0.5) * 0.11,
+            alpha: Math.random() * 0.7 + 0.3
+          });
+        }
+      }
+
+      let angle = 0;
+      function render() {
+        ctx.fillStyle = '#0e1c10';
+        ctx.fillRect(0, 0, width, height);
+
+        const cx = width / 2;
+        const cy = height / 2;
+        const radius = Math.min(width, height) * 0.42;
+
+        // Draw Subtle Polar Grid in Pale Fern / Sprout
+        ctx.strokeStyle = 'rgba(183, 189, 165, 0.15)';
+        ctx.lineWidth = 1;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.arc(cx, cy, radius * 0.66, 0, Math.PI * 2);
+        ctx.arc(cx, cy, radius * 0.33, 0, Math.PI * 2);
+        ctx.moveTo(cx - radius, cy);
+        ctx.lineTo(cx + radius, cy);
+        ctx.moveTo(cx, cy - radius);
+        ctx.lineTo(cx, cy + radius);
+        ctx.stroke();
+
+        // Rotate constellation gently to mimic Costas carrier phase lock
+        angle += 0.002;
+        const cosA = Math.cos(angle);
+        const sinA = Math.sin(angle);
+
+        // Draw I/Q Symbol Cloud in Electric Sprout (#68ef3f)
+        for (let pt of cloud) {
+          const curI = pt.baseI + pt.noiseI + Math.sin(angle * 4 + pt.baseI) * 0.01;
+          const curQ = pt.baseQ + pt.noiseQ + Math.cos(angle * 4 + pt.baseQ) * 0.01;
+
+          const rotI = curI * cosA - curQ * sinA;
+          const rotQ = curI * sinA + curQ * cosA;
+
+          const px = cx + rotI * radius * 0.85;
+          const py = cy + rotQ * radius * 0.85;
+
+          ctx.beginPath();
+          ctx.arc(px, py, 2.4, 0, Math.PI * 2);
+          ctx.fillStyle = '#68ef3f';
+          ctx.globalAlpha = pt.alpha;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
+
+    // Ambient Background Video Safety Autoplay
+    const bgVid = document.getElementById('bg-video-el');
+    if (bgVid) {
+      bgVid.play().catch(() => {
+        document.addEventListener('click', () => { bgVid.play(); }, { once: true });
       });
     }
-  }
-
-  let angle = 0;
-  function render() {
-    ctx.fillStyle = '#0e1c10';
-    ctx.fillRect(0, 0, width, height);
-
-    const cx = width / 2;
-    const cy = height / 2;
-    const radius = Math.min(width, height) * 0.42;
-
-    // Draw Subtle Polar Grid in Pale Fern / Sprout
-    ctx.strokeStyle = 'rgba(183, 189, 165, 0.15)';
-    ctx.lineWidth = 1;
-
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.arc(cx, cy, radius * 0.66, 0, Math.PI * 2);
-    ctx.arc(cx, cy, radius * 0.33, 0, Math.PI * 2);
-    ctx.moveTo(cx - radius, cy);
-    ctx.lineTo(cx + radius, cy);
-    ctx.moveTo(cx, cy - radius);
-    ctx.lineTo(cx, cy + radius);
-    ctx.stroke();
-
-    // Rotate constellation gently to mimic Costas carrier phase lock
-    angle += 0.002;
-    const cosA = Math.cos(angle);
-    const sinA = Math.sin(angle);
-
-    // Draw I/Q Symbol Cloud in Electric Sprout (#68ef3f)
-    for (let pt of cloud) {
-      const curI = pt.baseI + pt.noiseI + Math.sin(angle * 4 + pt.baseI) * 0.01;
-      const curQ = pt.baseQ + pt.noiseQ + Math.cos(angle * 4 + pt.baseQ) * 0.01;
-
-      const rotI = curI * cosA - curQ * sinA;
-      const rotQ = curI * sinA + curQ * cosA;
-
-      const px = cx + rotI * radius * 0.85;
-      const py = cy + rotQ * radius * 0.85;
-
-      ctx.beginPath();
-      ctx.arc(px, py, 2.4, 0, Math.PI * 2);
-      ctx.fillStyle = '#68ef3f';
-      ctx.globalAlpha = pt.alpha;
-      ctx.fill();
-    }
-
-    requestAnimationFrame(render);
-  }
-  render();
-})();
-
-// Ambient Background Video Safety Autoplay
-const bgVid = document.getElementById('bg-video-el');
-if (bgVid) {
-  bgVid.play().catch(() => {
-    document.addEventListener('click', () => { bgVid.play(); }, { once: true });
-  });
-}
-</script>
+  </script>
 
 </body>
+
 </html>
